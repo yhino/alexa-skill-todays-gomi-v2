@@ -25,11 +25,11 @@ const TellMeGomiIntentHandler = {
   async handle(handlerInput) {
     let slotDate = moment()
     if (handlerInput.requestEnvelope.request.intent) {
+      console.log(`slots = ${JSON.stringify(handlerInput.requestEnvelope.request.intent.slots)}`)
       if (handlerInput.requestEnvelope.request.intent.slots.date) {
         slotDate = moment(handlerInput.requestEnvelope.request.intent.slots.date.value)
       }
     }
-    console.log(`slots = ${JSON.stringify(handlerInput.requestEnvelope.request.intent.slots)}`)
     console.log(`slotDate = ${slotDate.format('YYYY-MM-DD')}`)
 
     let items = []
