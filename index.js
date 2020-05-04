@@ -53,7 +53,7 @@ const TellMeGomiIntentHandler = {
     const cardTitle = `${slotDate.calendar()} ${slotDate.format('M月D日')} のゴミ`
     let cardContent = ''
     if (items.length > 0) {
-      cardContent += items.join('<br>')
+      cardContent += items.join('\n')
     } else {
       cardContent += `ありません`
     }
